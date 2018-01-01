@@ -39,19 +39,21 @@ var navSupport = !(!('performance' in window) || !('timing' in window.performanc
 	
 </div>
 <script type="text/javascript">
-	for(var i = 1 ; i < 996 ; i++){
+	var div = document.createElement("DIV");
+	for(var i = 1 ; i < 200 ; i++){
 		var img = document.createElement("IMG");
 		if( i >= 1 && i < 10 ){
-			img.src = "https://http20-image-webserver.com/circle00" + i + ".png";
+			img.src = "https://http20-image-webserver.com/image/circle00" + i + ".png";
 		}else if( i >= 10 && i < 100 ){
-			img.src = "https://http20-image-webserver.com/circle0" + i + ".png";
+			img.src = "https://http20-image-webserver.com/image/circle0" + i + ".png";
 		}else{
-			img.src = "https://http20-image-webserver.com/circle" + i + ".png";
+			img.src = "https://http20-image-webserver.com/image/circle" + i + ".png";
 		}
 		img.className = "image-size";
 		img.src += "?q=" + Math.random();
-		document.body.appendChild(img);		
+		div.appendChild(img);
 	}
+	document.body.appendChild(div);
 </script>
 
 <!-- <img class="image-size" src="./circle001.png"></img>
