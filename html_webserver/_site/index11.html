@@ -17,7 +17,7 @@ var navSupport = !(!('performance' in window) || !('timing' in window.performanc
 
 </script>
 </head>
-<body onload="imageLoadTime();">
+<body>
 
 <style>
 .image-size {
@@ -38,19 +38,27 @@ var navSupport = !(!('performance' in window) || !('timing' in window.performanc
 	</p>
 	
 </div>
+<img class="image-size" src="image/circle_small.png"></img>
+<br />
+<br />
+<br />
 <script type="text/javascript">
+	var isSmall = true; // big 62kb  small 0.7 kb
+	var suffix = isSmall ? "_small" : "";
+
 	var div = document.createElement("DIV");
-	for(var i = 1 ; i < 800 ; i++){
+	for(var i = 1 ; i < 995 ; i++){
 		var img = document.createElement("IMG");
 		if( i >= 1 && i < 10 ){
-			img.src = "http://http11-image-webserver.com/image/circle00" + i + ".png";
+			img.src = "image/circle"+suffix+"00" + i + ".png";
 		}else if( i >= 10 && i < 100 ){
-			img.src = "http://http11-image-webserver.com/image/circle0" + i + ".png";
+			img.src = "image/circle"+suffix+"0" + i + ".png";
 		}else{
-			img.src = "http://http11-image-webserver.com/image/circle" + i + ".png";
+			img.src = "image/circle"+suffix+"" + i + ".png";
 		}
 		img.className = "image-size";
 		img.src += "?q=" + Math.random();
+		img.setAttribute("onload", "imageLoadTime();");
 		div.appendChild(img);
 	}
 	document.body.appendChild(div);
