@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: default-http-backend2
+  name: default-http-backend2
+spec:
+  # externalTrafficPolicy: Cluster
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: default-http-backend2
+  # sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

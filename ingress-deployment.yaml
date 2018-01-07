@@ -16,7 +16,7 @@ apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: default-http-backend
-  namespace: kube-system
+  # namespace: kube-system
   labels:
     addonmanager.kubernetes.io/mode: Reconcile
 spec:
